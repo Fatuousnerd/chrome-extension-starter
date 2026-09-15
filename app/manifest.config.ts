@@ -1,17 +1,17 @@
 import { defineManifest } from "@crxjs/vite-plugin";
 
 export default defineManifest({
-  manifest_version: 3,
-  name: "chrome-extension starter",
-  version: "1.0.0",
+	manifest_version: 3,
+	name: "chrome-extension starter",
+	version: "1.0.0",
 
-  action: { default_popup: "index.html" },
+	action: { default_popup: "index.html" },
 
-  permissions: ["storage", "activeTab", "webRequest"],
+	permissions: ["storage", "activeTab", "webRequest"],
 
-  host_permissions: ["<all_urls>"],
+	host_permissions: ["<all_urls>"],
 
-  background: { service_worker: "src/background.ts", type: "module" },
+	background: { service_worker: "src/background.ts", type: "module" },
 
-  content_scripts: [{ matches: ["<all_urls>"], js: ["src/content.ts"] }],
+	content_scripts: [{ matches: ["<all_urls>"], js: ["src/content.ts"] }],
 });
